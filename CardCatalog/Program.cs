@@ -8,12 +8,12 @@ namespace CardCatalog
         {
             //I'm so lost man, how does Git work?
             //I know
-            Console.WriteLine("Enter the name of a file: ");
+            
             bool displaymenu = true;
 
-            if (displaymenu)
+            while (displaymenu)
             {
-                MainMenu();
+                displaymenu = MainMenu();
 
             }
 
@@ -24,18 +24,33 @@ namespace CardCatalog
         {
             Console.WriteLine("Enter the name of a file: ");
             string filename = Console.ReadLine();
+            CardCatalog cc = new CardCatalog();
             Console.WriteLine("Select a number");
             Console.Write("1. List All books");
             Console.Write("2. Add a book");
             Console.Write("3. Save and Exit");
 
-            string input = Console.ReadLine();
+            string option = Console.ReadLine();
+            int num = int.Parse(option);
 
+            if (num == 1)
+            {
 
-
-            return false;
+               
+            }
+            else if (num == 2)
+            {
+                cc.AddBook();
+            }
+            else if (num == 3)
+            {
+                return false;
+            }
+            return true;
         }
 
+
+            
 
     }
 }
